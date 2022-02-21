@@ -18,10 +18,10 @@
 #define PRINT_IFFT_FREQUENCY
 #define PRINT_IFFT_FREQUENCY_FULL
 
-#define CIS_ACTIVE_PIXELS_PER_LINE				(1152)
+#define CIS_ACTIVE_PIXELS_PER_LINE				(576)
 #define CIS_ADC_OUT_LINES						(3)
-#define CIS_IFFT_OVERSAMPLING_RATIO				(16)
-#define NUMBER_OF_NOTES     					(((CIS_ACTIVE_PIXELS_PER_LINE) * (CIS_ADC_OUT_LINES)) / CIS_IFFT_OVERSAMPLING_RATIO)
+#define PIXELS_PER_NOTE							(16)
+#define NUMBER_OF_NOTES     					(((CIS_ACTIVE_PIXELS_PER_LINE) * (CIS_ADC_OUT_LINES)) / PIXELS_PER_NOTE)
 
 #define STM32_START_WAVES_ADDR					0x24000c30
 #define STM32_START_UNITARY_WAVEFORM_ADDR		0x24002070
@@ -133,7 +133,7 @@ int main( int argc, char* args[] )
 
 	struct wave *waves;
 	waves = (wave*)file_contents;
-	char str[20] = {0};
+	char str[200] = {0};
 	int octave = 0;
 
 	//	int pixelNumber = sb.st_size / 2;
