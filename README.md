@@ -1,2 +1,2 @@
 # CISYNTH_RamViewer
-Data analyser for debuggin SSS_MOD
+Data analyser for debuggin CIS
